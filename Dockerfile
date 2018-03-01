@@ -26,7 +26,7 @@ RUN apt-get install -y \
 COPY installpython3.sh /root/tmp/installpython3.sh
 
 # Run the script responsible for installing Python 3.6.1 and link it to /usr/bin/python3
-RUN chmod +x /root/tmp/installpython3.sh && \
+RUN chmod +x /root/tmp/installpython3.sh; sync && \
 	./root/tmp/installpython3.sh && \
 	rm -rf /root/tmp/installpython3.sh && \
 	ln -s /Python-3.6.1/python /usr/bin/python3
